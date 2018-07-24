@@ -1,3 +1,10 @@
+# Install 'disable-keybinding' package
+# Check 'All Bundleed Packages' and 'All Community Packages'
+# Fill 'ctrl-k' in 'Prefix Keys'
+
+# Install 'atomic-emacs'
+# Check 'Send kills to the system clipboard' and 'Use advanced-open-file for find file if available'
+# Uncheck 'Enable' in Keybindings section
 'atom-workspace atom-text-editor':
   'alt-u': 'atomic-emacs:capitalize-word-or-region'
   'ctrl-d': 'atomic-emacs:forward-char'
