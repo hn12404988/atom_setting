@@ -1,0 +1,55 @@
+'atom-workspace atom-text-editor':
+  'alt-u': 'atomic-emacs:capitalize-word-or-region'
+  'ctrl-d': 'atomic-emacs:forward-char'
+  'ctrl-a': 'atomic-emacs:backward-char'
+  'ctrl-x ctrl-s': 'core:save'
+  'ctrl-x u': 'core:undo'
+  'alt-c': 'unset!'
+  'ctrl-k': 'atomic-emacs:kill-line'
+  'alt-9': 'core:move-to-top'
+  'alt-0': 'core:move-to-bottom'
+  'ctrl-x h': 'atomic-emacs:mark-whole-buffer'
+  'ctrl-space': 'atomic-emacs:set-mark'
+  'ctrl-f': 'find-and-replace:show'
+  'ctrl-alt-s': 'editor:scroll-one-down'
+  'ctrl-alt-w': 'editor:scroll-one-up'
+  'alt-d': 'editor:scroll-down'
+  'alt-a': 'editor:scroll-up'
+
+'atom-text-editor:not([mini])':
+  'enter': 'editor:newline'
+
+'atom-text-editor:not(.autocomplete-active):not(.mini)':
+  'ctrl-w': 'atomic-emacs:previous-line'
+  'ctrl-s': 'atomic-emacs:next-line'
+  'alt-v': 'unset!'
+  'ctrl-j': 'editor:newline'
+
+'body.platform-win32':
+  'alt-c': 'atomic-emacs:copy'
+
+'body .native-key-bindings':
+  'alt-v': 'unset!'
+  'ctrl-v': 'unset!'
+
+'atom-workspace':
+  'alt-x': 'command-palette:toggle'
+  'ctrl-x b': 'fuzzy-finder:toggle-buffer-finder'
+  'ctrl-x ctrl-f': 'atomic-emacs:find-file'
+  'ctrl-x k': 'core:close'
+  'ctrl-g': 'core:cancel'
+
+'body':
+  'alt-v': 'core:paste'
+  'alt-c': 'core:copy'
+  'ctrl-r': 'find-and-replace:find-previous-selected'
+
+'atom-text-editor':
+  'ctrl-q': 'editor:move-to-beginning-of-line'
+  'ctrl-e': 'editor:move-to-end-of-line'
+  'alt-e': 'core:delete'
+  'alt-q': 'core:backspace'
+  'ctrl-alt-\\': 'editor:auto-indent'
+
+'.platform-win32, .platform-linux':
+  'ctrl-shift-F': 'project-find:show'
