@@ -1,8 +1,11 @@
+# Install 'center-curosr', 'advnace-open-file'
+# Check 'Use fuzzy check' in 'advnaced-open-file'
+
 # Install 'disable-keybinding' package
 # Check 'All Bundleed Packages' and 'All Community Packages'
 # Fill 'ctrl-k' in 'Prefix Keys'
 
-# Install 'atomic-emacs' and 'advnace-open-file'
+# Install 'atomic-emacs'
 # Check 'Send kills to the system clipboard' and 'Use advanced-open-file for find file if available'
 # Uncheck 'Enable' in Keybindings section
 
@@ -10,7 +13,7 @@
   'alt-u': 'atomic-emacs:capitalize-word-or-region'
   'ctrl-d': 'atomic-emacs:forward-char'
   'ctrl-a': 'atomic-emacs:backward-char'
-  'ctrl-x ctrl-s': 'core:save'
+  'ctrl-x ctrl-s': 'window:save-all'
   'ctrl-x u': 'core:undo'
   'alt-c': 'unset!'
   'ctrl-k': 'atomic-emacs:kill-line'
@@ -19,12 +22,16 @@
   'ctrl-x h': 'atomic-emacs:mark-whole-buffer'
   'ctrl-space': 'atomic-emacs:set-mark'
   'ctrl-f': 'find-and-replace:show'
-  'ctrl-alt-s': 'editor:scroll-one-down'
-  'ctrl-alt-w': 'editor:scroll-one-up'
-  'alt-d': 'editor:scroll-down'
-  'alt-a': 'editor:scroll-up'
   'ctrl-alt-up': 'editor:toggle-soft-wrap'
   'softWrap': true
+  'alt-d': 'editor:scroll-down'
+  'alt-a': 'editor:scroll-up'
+  'ctrl-alt-s': 'editor:scroll-one-down'
+  'ctrl-alt-w': 'editor:scroll-one-up'
+
+'.advanced-open-file atom-text-editor':
+  'alt-p': 'advanced-open-file:move-cursor-up'
+  'alt-n': 'advanced-open-file:move-cursor-down'
 
 'atom-text-editor:not([mini])':
   'enter': 'editor:newline'
@@ -36,7 +43,8 @@
   'ctrl-j': 'editor:newline'
 
 'body.platform-win32':
-  'alt-c': 'atomic-emacs:copy'
+  'alt-c': 'atomic-emacs:copy-region-as-kill'
+  'alt-z': 'atomic-emacs:cut'
 
 'body .native-key-bindings':
   'alt-v': 'unset!'
@@ -51,11 +59,19 @@
   'ctrl-x ctrl-f': 'atomic-emacs:find-file'
   'ctrl-x k': 'core:close'
   'ctrl-g': 'core:cancel'
+  'ctrl-x 3': 'pane:split-right'
+  'ctrl-x 1': 'atomic-emacs:close-other-panes'
+  'ctrl-x o': 'window:focus-next-pane'
+  'ctrl-alt-g': "go-to-line:toggle"
+  'ctrl-alt-o': 'center-cursor:toggle'
 
 'body':
   'alt-v': 'core:paste'
-  'alt-c': 'core:copy'
+  #'alt-c': 'core:copy'
   'ctrl-r': 'find-and-replace:find-previous-selected'
+  'ctrl-x ctrl-s':'window:save-all'
+  'alt-p': 'core:move-up'
+  'alt-n': 'core:move-down'
 
 'atom-text-editor':
   'ctrl-q': 'editor:move-to-beginning-of-line'
