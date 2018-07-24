@@ -5,6 +5,7 @@
 # Install 'atomic-emacs' and 'advnace-open-file'
 # Check 'Send kills to the system clipboard' and 'Use advanced-open-file for find file if available'
 # Uncheck 'Enable' in Keybindings section
+
 'atom-workspace atom-text-editor':
   'alt-u': 'atomic-emacs:capitalize-word-or-region'
   'ctrl-d': 'atomic-emacs:forward-char'
@@ -22,6 +23,8 @@
   'ctrl-alt-w': 'editor:scroll-one-up'
   'alt-d': 'editor:scroll-down'
   'alt-a': 'editor:scroll-up'
+  'ctrl-alt-up': 'editor:toggle-soft-wrap'
+  'softWrap': true
 
 'atom-text-editor:not([mini])':
   'enter': 'editor:newline'
@@ -38,6 +41,9 @@
 'body .native-key-bindings':
   'alt-v': 'unset!'
   'ctrl-v': 'unset!'
+'.platform-win32 atom-text-editor:not([mini])':
+  'ctrl-alt-left': 'tree-view:toggle'
+  'ctrl-alt-right': 'github:toggle-git-tab'
 
 'atom-workspace':
   'alt-x': 'command-palette:toggle'
