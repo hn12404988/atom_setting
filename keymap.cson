@@ -33,9 +33,6 @@
   'alt-p': 'advanced-open-file:move-cursor-up'
   'alt-n': 'advanced-open-file:move-cursor-down'
 
-'atom-text-editor:not([mini])':
-  'enter': 'editor:newline'
-
 'atom-text-editor:not(.autocomplete-active):not(.mini)':
   'ctrl-w': 'atomic-emacs:previous-line'
   'ctrl-s': 'atomic-emacs:next-line'
