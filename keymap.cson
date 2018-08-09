@@ -26,8 +26,12 @@
   'softWrap': true
   'alt-d': 'editor:scroll-down'
   'alt-a': 'editor:scroll-up'
+  'alt-w': 'editor:view-scroll-up'
+  'alt-s': 'editor:view-scroll-down'
   'ctrl-alt-s': 'editor:scroll-one-down'
   'ctrl-alt-w': 'editor:scroll-one-up'
+  'alt-e': 'core:delete'
+  'alt-q': 'core:backspace'
 
 '.advanced-open-file atom-text-editor':
   'alt-p': 'advanced-open-file:move-cursor-up'
@@ -46,6 +50,7 @@
 'body .native-key-bindings':
   'alt-v': 'unset!'
   'ctrl-v': 'unset!'
+
 '.platform-win32 atom-text-editor:not([mini])':
   'ctrl-alt-left': 'tree-view:toggle'
   'ctrl-alt-right': 'github:toggle-git-tab'
@@ -73,9 +78,9 @@
 'atom-text-editor':
   'ctrl-q': 'editor:move-to-beginning-of-line'
   'ctrl-e': 'editor:move-to-end-of-line'
-  'alt-e': 'core:delete'
-  'alt-q': 'core:backspace'
   'ctrl-alt-\\': 'editor:auto-indent'
+
 
 '.platform-win32, .platform-linux':
   'ctrl-shift-F': 'project-find:show'
+
