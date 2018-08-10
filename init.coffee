@@ -1,5 +1,33 @@
+atom.menu.template.forEach (t) ->
+  t.label = t.label.replace("&", "")
+atom.menu.update()
+
 atom.commands.add 'atom-text-editor',
   'editor:scroll-down': ->
+    editor = atom.workspace.getActiveTextEditor()
+    view = atom.views.getView(editor)
+    lineHeightFactor = atom.config.get('editor.lineHeight')
+    fontSize = atom.config.get('editor.fontSize')
+    lineHeight = lineHeightFactor * fontSize
+    windowHeight = view.getHeight()
+    linesMoved = parseInt(windowHeight / lineHeight)
+    c = editor.getCursors()[0]
+    c.moveDown(linesMoved)
+    atom.commands.dispatch(view, "editor:view-scroll-down")
+
+  'editor:scroll-up': ->
+    editor = atom.workspace.getActiveTextEditor()
+    view = atom.views.getView(editor)
+    lineHeightFactor = atom.config.get('editor.lineHeight')
+    fontSize = atom.config.get('editor.fontSize')
+    lineHeight = lineHeightFactor * fontSize
+    windowHeight = view.getHeight()
+    linesMoved = parseInt(windowHeight / lineHeight)
+    c = editor.getCursors()[0]
+    c.moveUp(linesMoved)
+    atom.commands.dispatch(view, "editor:view-scroll-up")
+
+  'editor:view-scroll-down': ->
     editor = atom.workspace.getActiveTextEditor()
     view = atom.views.getView(editor)
     # get the line height
@@ -7,26 +35,21 @@ atom.commands.add 'atom-text-editor',
     fontSize = atom.config.get('editor.fontSize')
     lineHeight = lineHeightFactor * fontSize
     # from that get the document height
-    #documentHeight = editor.getScreenLineCount() * lineHeight
+    documentHeight = editor.getScreenLineCount() * lineHeight
     # add one screenful to the current scroll position
     # (though use 1 screenful - 1 line to make the bottom line before still visible as the top line after)
-    #currentScrollTop = view.getScrollTop()
+    currentScrollTop = view.getScrollTop()
     windowHeight = view.getHeight()
-    linesMoved = parseInt(windowHeight / lineHeight)
-    c = editor.getCursors()[0]
-    c.moveDown(linesMoved)
-    #overlap = 1
-    #viewMoved = (windowHeight - overlap * lineHeight)
-    #newScrollTop = currentScrollTop + viewMoved
-    #linesMoved = parseInt(viewMoved / lineHeight)
+    overlap = 1
+    viewMoved = (windowHeight - overlap * lineHeight)
+    newScrollTop = currentScrollTop + viewMoved
     # get the scroll position that would make the last line visible
-    #maxScrollTop = Math.max(0, documentHeight - windowHeight)
+    maxScrollTop = Math.max(0, documentHeight - windowHeight)
     # only set the scroll position if it would cause scrolling down, not up!
-    #if newScrollTop > currentScrollTop
-        #view.setScrollTop(newScrollTop)
+    if newScrollTop > currentScrollTop
+        view.setScrollTop(newScrollTop)
 
-
-  'editor:scroll-up': ->
+  'editor:view-scroll-up': ->
     editor = atom.workspace.getActiveTextEditor()
     view = atom.views.getView(editor)
     # get the line height
@@ -35,18 +58,11 @@ atom.commands.add 'atom-text-editor',
     lineHeight = lineHeightFactor * fontSize
     # subtract one screenful from the current scroll position
     # (though use 1 screenful - 1 line to make the top line before still visible as the bottom line after)
-    #currentScrollTop = view.getScrollTop()
+    currentScrollTop = view.getScrollTop()
     windowHeight = view.getHeight()
-    linesMoved = parseInt(windowHeight / lineHeight)
-    c = editor.getCursors()[0]
-    c.moveUp(linesMoved)
-    #overlap = 1
-    #newScrollTop = Math.max(0, currentScrollTop - (windowHeight - overlap * lineHeight))
-    #view.setScrollTop(newScrollTop)
-    #editor = atom.workspace.getActiveTextEditor()
-    #pos = editor.getCursorScreenPosition()
-    #pos.row = pos.row - 50
-    #editor.setCursorScreenPosition(pos)
+    overlap = 1
+    newScrollTop = Math.max(0, currentScrollTop - (windowHeight - overlap * lineHeight))
+    view.setScrollTop(newScrollTop)
 
   'editor:scroll-one-up': ->
     editor = atom.workspace.getActiveTextEditor()
