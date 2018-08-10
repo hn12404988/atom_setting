@@ -9,6 +9,9 @@
 # Check 'Send kills to the system clipboard' and 'Use advanced-open-file for find file if available'
 # Uncheck 'Enable' in Keybindings section
 
+# Install: autocomplete-python, highlight-line (enable all style), language-cpp14
+# python-indent, python-tools
+
 'atom-workspace atom-text-editor':
   'alt-u': 'atomic-emacs:capitalize-word-or-region'
   'ctrl-d': 'atomic-emacs:forward-char'
@@ -24,14 +27,16 @@
   'ctrl-f': 'find-and-replace:show'
   'ctrl-alt-up': 'editor:toggle-soft-wrap'
   'softWrap': true
-  'alt-d': 'editor:scroll-down'
-  'alt-a': 'editor:scroll-up'
-  'alt-w': 'editor:view-scroll-up'
-  'alt-s': 'editor:view-scroll-down'
+  'alt-s': 'editor:scroll-down'
+  'alt-w': 'editor:scroll-up'
+  'ctrl-alt-a': 'editor:view-scroll-up'
+  'ctrl-alt-d': 'editor:view-scroll-down'
   'ctrl-alt-s': 'editor:scroll-one-down'
   'ctrl-alt-w': 'editor:scroll-one-up'
   'alt-e': 'core:delete'
   'alt-q': 'core:backspace'
+  'alt-d': 'atomic-emacs:forward-word'
+  'alt-a': 'atomic-emacs:backward-word'
 
 '.advanced-open-file atom-text-editor':
   'alt-p': 'advanced-open-file:move-cursor-up'
@@ -83,4 +88,3 @@
 
 '.platform-win32, .platform-linux':
   'ctrl-shift-F': 'project-find:show'
-
