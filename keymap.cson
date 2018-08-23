@@ -13,55 +13,66 @@
 # python-indent, python-tools
 
 'atom-workspace atom-text-editor':
-  'alt-u': 'atomic-emacs:capitalize-word-or-region'
+  'cmd-u': 'atomic-emacs:capitalize-word-or-region'
   'ctrl-d': 'atomic-emacs:forward-char'
   'ctrl-a': 'atomic-emacs:backward-char'
   'ctrl-x ctrl-s': 'window:save-all'
   'ctrl-x u': 'core:undo'
-  'alt-c': 'unset!'
+  'cmd-c': 'unset!'
   'ctrl-k': 'atomic-emacs:kill-line'
-  'alt-9': 'core:move-to-top'
-  'alt-0': 'core:move-to-bottom'
+  'cmd-9': 'core:move-to-top'
+  'cmd-0': 'core:move-to-bottom'
   'ctrl-x h': 'atomic-emacs:mark-whole-buffer'
   'ctrl-space': 'atomic-emacs:set-mark'
   'ctrl-f': 'find-and-replace:show'
-  'ctrl-alt-up': 'editor:toggle-soft-wrap'
+  'ctrl-cmd-up': 'editor:toggle-soft-wrap'
   'softWrap': true
-  'alt-s': 'editor:scroll-down'
-  'alt-w': 'editor:scroll-up'
-  'ctrl-alt-a': 'editor:view-scroll-up'
-  'ctrl-alt-d': 'editor:view-scroll-down'
-  'ctrl-alt-s': 'editor:scroll-one-down'
-  'ctrl-alt-w': 'editor:scroll-one-up'
-  'alt-e': 'core:delete'
-  'alt-q': 'core:backspace'
-  'alt-d': 'atomic-emacs:forward-word'
-  'alt-a': 'atomic-emacs:backward-word'
+  'cmd-s': 'editor:scroll-down'
+  'cmd-w': 'editor:scroll-up'
+  'ctrl-cmd-a': 'editor:view-scroll-up'
+  'ctrl-cmd-d': 'editor:view-scroll-down'
+  'ctrl-cmd-s': 'editor:scroll-one-down'
+  'ctrl-cmd-w': 'editor:scroll-one-up'
+  'cmd-e': 'core:delete'
+  'cmd-q': 'core:backspace'
+  'cmd-d': 'atomic-emacs:forward-word'
+  'cmd-a': 'atomic-emacs:backward-word'
 
 '.advanced-open-file atom-text-editor':
-  'alt-p': 'advanced-open-file:move-cursor-up'
-  'alt-n': 'advanced-open-file:move-cursor-down'
+  'cmd-p': 'advanced-open-file:move-cursor-up'
+  'cmd-n': 'advanced-open-file:move-cursor-down'
+  'enter': 'advanced-open-file:confirm-selected-or-first'
+  'backspace': 'advanced-open-file:delete-path-component'
 
 'atom-text-editor:not(.autocomplete-active):not(.mini)':
   'ctrl-w': 'atomic-emacs:previous-line'
   'ctrl-s': 'atomic-emacs:next-line'
-  'alt-v': 'unset!'
+  'cmd-v': 'unset!'
   'ctrl-j': 'editor:newline'
 
-'body.platform-win32':
-  'alt-c': 'atomic-emacs:copy-region-as-kill'
-  'alt-z': 'atomic-emacs:cut'
+'body.platform-darwin':
+  'cmd-c': 'atomic-emacs:copy-region-as-kill'
+  'cmd-z': 'atomic-emacs:cut'
 
 'body .native-key-bindings':
-  'alt-v': 'unset!'
+  'cmd-v': 'unset!'
   'ctrl-v': 'unset!'
 
-'.platform-win32 atom-text-editor:not([mini])':
-  'ctrl-alt-left': 'tree-view:toggle'
-  'ctrl-alt-right': 'github:toggle-git-tab'
+'.platform-darwin atom-text-editor:not([mini])':
+  'ctrl-cmd-left': 'tree-view:toggle'
+  'ctrl-cmd-right': 'github:toggle-git-tab'
+
+'.platform-darwin atom-workspace':
+  'ctrl-`': 'platformio-ide-terminal:toggle'
+  'ctrl-cmd-f': 'platformio-ide-terminal:focus'
+  'ctrl-cmd-`': 'platformio-ide-terminal:fullscreen'
+
+'.platform-darwin .platformio-ide-terminal .terminal':
+  'cmd-v': 'platformio-ide-terminal:paste'
+  'cmd-c': 'platformio-ide-terminal:copy'
 
 'atom-workspace':
-  'alt-x': 'command-palette:toggle'
+  'cmd-x': 'command-palette:toggle'
   'ctrl-x b': 'fuzzy-finder:toggle-buffer-finder'
   'ctrl-x ctrl-f': 'atomic-emacs:find-file'
   'ctrl-x k': 'core:close'
@@ -69,22 +80,22 @@
   'ctrl-x 3': 'pane:split-right'
   'ctrl-x 1': 'atomic-emacs:close-other-panes'
   'ctrl-x o': 'window:focus-next-pane'
-  'ctrl-alt-g': "go-to-line:toggle"
-  'ctrl-alt-o': 'center-cursor:toggle'
+  'ctrl-cmd-g': "go-to-line:toggle"
+  'ctrl-cmd-o': 'center-cursor:toggle'
 
 'body':
-  'alt-v': 'core:paste'
-  #'alt-c': 'core:copy'
+  'cmd-v': 'core:paste'
+  #'cmd-c': 'core:copy'
   'ctrl-r': 'find-and-replace:find-previous-selected'
   'ctrl-x ctrl-s':'window:save-all'
-  'alt-p': 'core:move-up'
-  'alt-n': 'core:move-down'
+  'cmd-p': 'core:move-up'
+  'cmd-n': 'core:move-down'
 
 'atom-text-editor':
   'ctrl-q': 'editor:move-to-beginning-of-line'
   'ctrl-e': 'editor:move-to-end-of-line'
-  'ctrl-alt-\\': 'editor:auto-indent'
+  'ctrl-cmd-\\': 'editor:auto-indent'
 
 
-'.platform-win32, .platform-linux':
+'.platform-darwin, .platform-linux':
   'ctrl-shift-F': 'project-find:show'
